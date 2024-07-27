@@ -9,17 +9,10 @@ const cors = require('cors'); // Import the CORS middleware
 
 const app = express();
 app.use(bodyParser.json());
+app.use(cors()); // Enable CORS
 
-// Enable CORS for all routes
-app.use(cors());
-
-// PostgreSQL client configuration
 const client = new Client({
-    user: 'postgres',
-    host: 'postgres.railway.internal',
-    database: 'railway',
-    password: 'eATmvhDxwashiWvAGVyqF1rVLiqxgSyn',
-    port: 5432,
+    connectionString: 'postgresql://postgres:eATmvhDxwashiWYaGVyqFIrVLiqxgSyn@roundhouse.proxy.rlwy.net:51264/railway', // Use your DATABASE_URL here
 });
 
 client.connect();
