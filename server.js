@@ -12,11 +12,11 @@ app.use(bodyParser.json());
 
 // PostgreSQL client configuration
 const client = new Client({
-    user: 'postgres', // Replace with your PostgreSQL username
-    host: 'localhost',
-    database: 'postgres',
-    password: 'damjan', // Replace with your PostgreSQL password
-    port: 5432,
+    user: 'postgres', // Your PostgreSQL username from Railway
+    host: 'postgres.railway.internal', // Your PostgreSQL host from Railway
+    database: 'railway', // Your PostgreSQL database name from Railway
+    password: 'eATmvhDxwashiWvAGVyqF1rVLiqxgSyn', // Your PostgreSQL password from Railway
+    port: 5432, // Default PostgreSQL port (usually 5432)
 });
 
 client.connect();
