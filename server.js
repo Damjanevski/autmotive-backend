@@ -1,4 +1,3 @@
-// backend/server.js
 const express = require('express');
 const { Client } = require('pg');
 const bodyParser = require('body-parser');
@@ -6,12 +5,21 @@ const { graphqlHTTP } = require('express-graphql');
 const { buildSchema } = require('graphql');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
+const cors = require('cors'); // Import the CORS middleware
 
 const app = express();
 app.use(bodyParser.json());
 
+// Enable CORS for all routes
+app.use(cors());
+
+// PostgreSQL client configuration
 const client = new Client({
-    connectionString: 'postgresql://postgres:eATmvhDxwashiWYaGVyqFIrVLiqxgSyn@roundhouse.proxy.rlwy.net:51264/railway', // Use your DATABASE_URL here
+    user: 'postgres',
+    host: 'postgres.railway.internal',
+    database: 'railway',
+    password: 'eATmvhDxwashiWvAGVyqF1rVLiqxgSyn',
+    port: 5432,
 });
 
 client.connect();
