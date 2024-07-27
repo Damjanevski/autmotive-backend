@@ -4,13 +4,8 @@ const fs = require('fs');
 const csvParser = require('csv-parser');
 const path = require('path');
 
-// PostgreSQL client configuration
 const client = new Client({
-    user: 'postgres', // Your PostgreSQL username from Railway
-    host: 'postgres.railway.internal', // Your PostgreSQL host from Railway
-    database: 'railway', // Your PostgreSQL database name from Railway
-    password: 'eATmvhDxwashiWvAGVyqF1rVLiqxgSyn', // Your PostgreSQL password from Railway
-    port: 5432, // Default PostgreSQL port (usually 5432)
+    connectionString: 'postgresql://postgres:eATmvhDxwashiWYaGVyqFIrVLiqxgSyn@roundhouse.proxy.rlwy.net:51264/railway', // Use your DATABASE_URL here
 });
 
 // SQL query to create the automobiles table
